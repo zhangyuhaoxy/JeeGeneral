@@ -20,9 +20,9 @@ public class HomeController {
     @RequestMapping("/create")
     public String createUser() {
         try {
-            User saveUser = userRepository.save(new User("zhangyuhaoxy4@hotmail.com", "yuhao"));
-            System.out.println(saveUser.getId());
-            List<User> oUser = userRepository.findByEmailLike("zhafng%");
+            // User saveUser = userRepository.save(new User("zhangyuhaoxy4@hotmail.com", "yuhao"));
+            // System.out.println(saveUser.getId());
+            List<User> oUser = userRepository.findByEmailLikeOrEmailLike("%xy@%", "%3@%");
             for (User user : oUser) {
                 System.out.println("yes");
                 System.out.println(user.getEmail());
